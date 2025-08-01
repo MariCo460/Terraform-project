@@ -28,7 +28,7 @@ trap ctl_c INT
 for i in {1..16}
 do
     #Set your organization Terraform cloudname here
-    ORGNAME="xtecsystems"
+    ORGNAME="TerraformDemo"
 
     #locations assume you installed in the default home user folder
     TFCLOUD_API_TOKEN=$(cat ~/.terraform.d/credentials.tfrc.json | jq -r '.credentials."app.terraform.io".token')
