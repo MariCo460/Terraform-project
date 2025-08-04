@@ -8,7 +8,7 @@ terraform {
   }
   cloud {
     #REPLACE WITH YOUR OWN ORG AND WORKSPACE DEPLOYMENT NAMES
-    organization = "TerraformDemo"
+    organization = "MariCo_Terraform"
     workspaces {
       name = "terraform-aws-ssrfdemo"
     }
@@ -37,5 +37,6 @@ module "ssrf_instance" {
   vpc_security_group_ids = module.ssrf_network.vpc_security_group_ids
   subnet_id              = module.ssrf_network.subnet_id
 }
+
 
 
