@@ -2,7 +2,7 @@
 variable "region_name" {
   description = "The AWS region to deploy to"
   type        = string
-  default     = "us-east-2"  # CHANGE: Update to your desired region
+  default     = "us-east-2"  # CHANGE: Update to desired region
 }
 variable "workspace" {
   description = "The Terraform workspace"
@@ -14,7 +14,7 @@ variable "workspace" {
 variable "instance_name_prefix" {
   description = "EC2 instance name label"
   type        = string
-  default     = "my-ec2"  # CHANGE: Change the prefix for your EC2 instance name
+  default     = "my-ec2"  # CHANGE: Change the prefix for EC2 instance name
 }
 
 variable "instance_type" {
@@ -27,7 +27,7 @@ variable "instance_type" {
 variable "vpc_name" {
   description = "VPC block for the VPC in CIDR notation"
   type        = string
-  default     = "my-vpc"  # CHANGE: Change to your desired VPC name
+  default     = "my-vpc"  # CHANGE: Change to desired VPC name
 }
 
 variable "cidr_block" {
@@ -39,7 +39,7 @@ variable "cidr_block" {
 variable "subnet_name" {
   description = "Subnet name label"
   type        = string
-  default     = "my-subnet"  # CHANGE: Change to your desired subnet name
+  default     = "my-subnet"  # CHANGE: Change to desired subnet name
 }
 
 variable "subnet_cidr" {
