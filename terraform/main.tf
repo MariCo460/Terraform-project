@@ -1,9 +1,7 @@
 terraform {
-  required_version = ">= 1.12.2"
+  required_version = ">= 1.0"
 }
 
 provider "aws" {
-  region = "us-east-2"  # Your specified region
+  region = "us-east-1"
 }
-
-resource "null_resource" "example" {}
