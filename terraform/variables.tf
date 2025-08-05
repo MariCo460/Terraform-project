@@ -4,17 +4,10 @@ variable "region_name" {
   type        = string
   default     = "us-east-2"  # CHANGE: Update to your desired region
 }
-
-variable "organization_name" {
-  description = "Human-friendly name for AWS Regions"
-  type        = string
-  default     = "MyOrganization"  # CHANGE: Enter your AWS Organization name
-}
-
 variable "workspace" {
   description = "The Terraform workspace"
   type        = string
-  default     = "default"  # CHANGE: Change if you want a different workspace name
+  default     = "Terraform-project"  # CHANGE: Change if you want a different workspace name
 }
 
 # EC2 instance settings
