@@ -1,36 +1,27 @@
-# Terraform deployment workflow for AWS – v1.0
-
-name: Terraform Deploy
+name: Terraform
 
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:  
+      - main  # or whatever branch you want to trigger on
 
 jobs:
   terraform:
-    name: Apply Terraform
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 1.8.0
+          terraform_version: 1.0.0
 
-      - name: Configure AWS Credentials
+      - name: Terraform Init
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: |
-          echo "Using AWS credentials from GitHub Secrets"
-          aws sts get-caller-identity
-
-      - name: Terraform Init
+          AWS_REGION: us-west-2
         run: terraform init
 
       - name: Terraform Plan
@@ -38,6 +29,3 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
