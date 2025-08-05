@@ -2,7 +2,7 @@
 variable "region_name" {
   description = "The AWS region to deploy to"
   type        = string
-  default     = "us-west-2"  # CHANGE: Update to your desired region
+  default     = "us-east-2"  # CHANGE: Update to your desired region
 }
 
 variable "organization_name" {
