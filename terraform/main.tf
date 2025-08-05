@@ -10,8 +10,10 @@ terraform {
 }
 
 provider "aws" {
-  region = us-east-2
+  region = "us-west-2"  # Change to your region
 }
+
+resource "null_resource" "test" {}
 
 # Define the VPC
 module "vpc" {
