@@ -10,7 +10,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2"  # Change to your region
+  region = "us-east-2"  # Change to your region
 }
 
 resource "null_resource" "test" {}
