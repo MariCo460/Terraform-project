@@ -1,0 +1,31 @@
+name: Test Terraform Connection
+
+on:
+  push:
+    branches:
+      - main  # Change as needed
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.0.0
+
+      - name: Terraform Init
+        working-directory: terraform  # Adjust this to match where your main.tf is
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: us-west-2
+        run: terraform init
+
+      - name: Terraform Plan
+        working-directory: terraform  # Adjust this to match where your main.tf is
+        run: terraform plan
