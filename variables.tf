@@ -1,5 +1,4 @@
 # This root-level variable is not needed unless you wish to override other modules.
-variable "region_name" {
 variable "aws_region" {
   description = "The AWS region to deploy resources"
   type        = string
