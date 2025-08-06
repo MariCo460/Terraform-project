@@ -47,3 +47,9 @@ variable "subnet_cidr" {
   type        = string
   default     = "10.0.1.0/24"  # CHANGE: Adjust the subnet CIDR block as necessary
 }
+
+variable "SNYK_KEY" {
+  description = "A key for linking Snyk"
+  type        = string
+  default     = ""  # Set a default value if applicable
+}
