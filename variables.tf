@@ -4,7 +4,6 @@ variable "aws_region" {
   type        = string
   default     = "us-east-2"  # Default value if not provided
 }
-}
 variable "workspace" {
   description = "The Terraform workspace"
   type        = string
