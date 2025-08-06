@@ -1,8 +1,10 @@
 # This root-level variable is not needed unless you wish to override other modules.
 variable "region_name" {
-  description = "The AWS region to deploy to"
+variable "aws_region" {
+  description = "The AWS region to deploy resources"
   type        = string
-  default     = "us-east-2"  # CHANGE: Update to desired region
+  default     = "us-east-2"  # Default value if not provided
+}
 }
 variable "workspace" {
   description = "The Terraform workspace"
